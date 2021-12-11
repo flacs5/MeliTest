@@ -19,63 +19,34 @@ const Item: React.FC = () => {
         <div className="container">
           <Breadcrumbs categories={data.item.categories} />
           <div className="card mb-4">
-            <div className="card-body item-content" style={{ padding: 32 }}>
+            <div className="card-body item-content">
               <div className="row">
                 <div className="col-md-8">
-                  <div className="d-flex flex-column">
+                  <div className="item-section-desc">
                     <img
-                      style={{
-                        width: "100%",
-                        maxWidth: 680,
-                        alignSelf: "center",
-                      }}
+                      className="item-section-desc__img"
                       src={data.item.picture}
                       alt={data.item.title}
                     />
-                    <div style={{ padding: "32px 0" }}>
-                      <span style={{ fontSize: 28 }}>
-                        Descripción del producto
-                      </span>
+                    <div className="item-section-desc__title">
+                      <span>Descripción del producto</span>
                     </div>
-                    <p
-                      style={{
-                        color: "#999999",
-                        fontSize: 16,
-                        whiteSpace: "pre-line",
-                      }}
-                    >
+                    <p className="item-section-desc__desc">
                       {data.item.description}
                     </p>
                   </div>
                 </div>
                 <div className="col-md-4">
-                  <div className="d-flex flex-column" style={{ padding: 32 }}>
-                    <span
-                      className="condition"
-                      style={{
-                        fontSize: 14,
-                        marginBottom: 16,
-                        color: "#999999",
-                      }}
-                    >
+                  <div className="item-section-title">
+                    <span className="item-section-title__condition">
                       {data.item.condition === "new" ? "Nuevo" : "Usado"} -{" "}
                       {data.item.sold_quantity} vendidos
                     </span>
-                    <span
-                      className="title"
-                      style={{ fontSize: 24, marginBottom: 32 }}
-                    >
+                    <span className="item-section-title__title">
                       {data.item.title}
                     </span>
-                    <div className="d-flex flex-row align-items-start">
-                      <span
-                        className="price"
-                        style={{
-                          fontSize: 46,
-                          marginBottom: 32,
-                          lineHeight: "46px",
-                        }}
-                      >
+                    <div className="item-section-title__price">
+                      <span className="price">
                         {getPrice(data.item.price.amount)}
                       </span>
                       <span className="decimals">
