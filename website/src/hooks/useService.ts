@@ -31,7 +31,6 @@ function useService<T>(
 
   useEffect(() => {
     let didCancel = false;
-    console.log("se active");
     const fetchData = async () => {
       dispatch({ type: "INIT" });
       try {

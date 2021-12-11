@@ -10,12 +10,6 @@ class Service extends ServiceBase {
   async getItem(id?: string): Promise<ItemDetailContainer> {
     return this.get<ItemDetailContainer>(`items/${id}`);
   }
-
-  // async getItemDescription(id: string): Promise<MLItemDescription> {
-  //   return this.get<MLItemDescription>(
-  //     `https://api.mercadolibre.com/items/${id}/description`
-  //   );
-  // }
 }
 
 export default new Service();
