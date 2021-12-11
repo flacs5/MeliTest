@@ -6,6 +6,17 @@ const SearchBar: React.FC = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState<string>("");
 
+  const search = () => {
+    navigate(`/items?q=${inputValue}`);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      search();
+    }
+  };
+
   return (
     <div className="searchbar">
       <input
@@ -14,11 +25,11 @@ const SearchBar: React.FC = () => {
         placeholder="Nunca dejes de buscar"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        onKeyPress={() => {}}
+        onKeyPress={handleKeyPress}
       />
       <button
         onClick={() => {
-          navigate(`/items?q=${inputValue}`);
+          search();
         }}
       >
         <img src={iconSearch} alt="" />

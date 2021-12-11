@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import SpinnerArea from "../../components/SpinnerArea";
 import { numberWithDots } from "../../shared/misc/utils";
 import Context from "./data_provider/itemContext";
 
 const Item: React.FC = () => {
-  const { data } = useContext(Context);
+  const { data, loading } = useContext(Context);
 
   console.log(data);
 
@@ -13,7 +14,7 @@ const Item: React.FC = () => {
   };
 
   return (
-    <>
+    <SpinnerArea loading={loading}>
       {data && (
         <div className="container">
           <Breadcrumbs categories={data.item.categories} />
@@ -91,7 +92,7 @@ const Item: React.FC = () => {
           </div>
         </div>
       )}
-    </>
+    </SpinnerArea>
   );
 };
 

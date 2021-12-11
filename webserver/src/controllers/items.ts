@@ -6,11 +6,7 @@ import {
 } from "../dtos/response/types";
 import itemsService from "../services/itemsService";
 import { getDecimalPart } from "../misc/utils";
-import {
-  MLAvailableFilter,
-  MLFilter,
-  MLFilterValue,
-} from "../dtos/response/mlTypes";
+import { MLAvailableFilter, MLFilterValue } from "../dtos/response/mlTypes";
 
 const getItems = async (req: Request, res: Response) => {
   const query = req.query.q;
