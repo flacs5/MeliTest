@@ -9,7 +9,7 @@ La aplicación esta dividida en dos partes:
 
 ## Webserver:
 
-Ir al directorio "webserver", instalar dependencias con el comando "npm install" y ejecutar el comando "npm start"
+Ir al directorio "webserver", instalar dependencias con el comando "npm install" y ejecutar el comando "npm start" para levantar el servidor web, en el puerto 5001
 
 ### Endpoints disponibles:
 
@@ -18,4 +18,4 @@ Ir al directorio "webserver", instalar dependencias con el comando "npm install"
 
 ## Website:
 
-Ir al directorio "website", instalar dependencias con el comando "yarn install" o "npm install" y ejecutar el comando "npm start"
+Ir al directorio "website", instalar dependencias con el comando "yarn install" o "npm install" y ejecutar el comando "npm start" para arrancar la aplicación
